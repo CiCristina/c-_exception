@@ -86,6 +86,11 @@ namespace csharp_exception.Contas
         {
             Numero_agencia = numero_agencia;
             Conta = numero_conta;
+            if (numero_agencia <= 0)
+            {
+                throw new ArgumentException("Numero de agencia menor ou igual a 0", nameof(numero_agencia));
+            }
+            /*
             try
             {
                 TaxaOperacao = 30 / TotalDeContasCriadas;
@@ -94,7 +99,7 @@ namespace csharp_exception.Contas
             {
                 Console.WriteLine("Ocorreu um erro! Não é possível fazer uma divisão por zero!");
             }          
-
+            */
             TotalDeContasCriadas++;
         }
 
